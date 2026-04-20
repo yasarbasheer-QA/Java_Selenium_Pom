@@ -18,12 +18,12 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '17'
-          distribution: 'murine'
+          distribution: 'temurin'   # ✅ FIXED
 
       - name: Install Chrome
         uses: browser-actions/setup-chrome@v1
 
-      - name: Build & Run Tests
+      - name: Run Tests
         run: mvn clean test
 
       - name: Upload Test Report
