@@ -3,8 +3,14 @@ name: Selenium CI
 on:
   push:
     branches: [ "master" ]
+
+
   pull_request:
     branches: [ "master" ]
+
+  workflow_dispatch:
+  schedule:
+   - cron: "30 21 * * *"
 
 jobs:
   test:
