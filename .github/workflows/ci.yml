@@ -24,13 +24,13 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '17'
-          distribution: 'temurin'   # ✅ FIXED
+          distribution: 'temurin'
 
       - name: Install Chrome
         uses: browser-actions/setup-chrome@v1
 
       - name: Run Tests
-        run: mvn clean test
+        run: mvn clean test -Denv=ci
 
       - name: Upload Test Report
         uses: actions/upload-artifact@v4
